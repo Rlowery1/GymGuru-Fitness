@@ -1,0 +1,13 @@
+{
+    "AppSyncApiName": "helloguru",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authhelloguru6d6809b3",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "S3DeploymentBucket": "amplify-helloguru-dev-184114-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/45a57a73be34b0fe4dbb709e8413a08f10a92711"
+}

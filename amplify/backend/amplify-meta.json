@@ -1,0 +1,109 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-helloguru-dev-184114-authRole",
+      "UnauthRoleArn": "arn:aws:iam::281607684597:role/amplify-helloguru-dev-184114-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::281607684597:role/amplify-helloguru-dev-184114-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-helloguru-dev-184114-deployment",
+      "UnauthRoleName": "amplify-helloguru-dev-184114-unauthRole",
+      "StackName": "amplify-helloguru-dev-184114",
+      "StackId": "arn:aws:cloudformation:us-west-1:281607684597:stack/amplify-helloguru-dev-184114/13d28e90-f066-11ed-b3b5-0601084e439b",
+      "AmplifyAppId": "d1lfuohotcfiuy"
+    }
+  },
+  "auth": {
+    "helloguru6d6809b3": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-helloguru-dev-184114-deployment/amplify-cfn-templates/auth/helloguru6d6809b3-cloudformation-template.json",
+        "logicalId": "authhelloguru6d6809b3"
+      },
+      "lastPushTimeStamp": "2023-05-12T01:51:25.218Z",
+      "output": {
+        "UserPoolId": "us-west-1_40LTmPHEy",
+        "AppClientIDWeb": "ei2ocph9kgvbkanlvitd6mdhd",
+        "AppClientID": "74t47eu0v55bbqd5dnk5m3m0to",
+        "IdentityPoolId": "us-west-1:3ea2e9d3-86b1-446c-b1fc-0d60c3f72522",
+        "UserPoolArn": "arn:aws:cognito-idp:us-west-1:281607684597:userpool/us-west-1_40LTmPHEy",
+        "IdentityPoolName": "helloguru6d6809b3_identitypool_6d6809b3__dev",
+        "UserPoolName": "helloguru6d6809b3_userpool_6d6809b3"
+      },
+      "lastPushDirHash": "qp65XWYWxZ+j6cd2tqS40QnYKqg="
+    }
+  },
+  "storage": {
+    "guruphotos": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "lastPushTimeStamp": "2023-05-12T01:51:25.218Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-helloguru-dev-184114-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storageguruphotos"
+      },
+      "output": {
+        "BucketName": "guruphotos184114-dev",
+        "Region": "us-west-1"
+      },
+      "lastPushDirHash": "+X1rh8BO1k5BIXfnUwjiO2hqw00="
+    }
+  },
+  "api": {
+    "helloguru": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "helloguru6d6809b3",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authhelloguru6d6809b3"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "rmshbjg3jbhtppwgai7tlz5lgy",
+        "GraphQLAPIEndpointOutput": "https://wpbvmt5yevhlrj2c3pjfyobigm.appsync-api.us-west-1.amazonaws.com/graphql"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-helloguru-dev-184114-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apihelloguru"
+      },
+      "lastPushTimeStamp": "2023-05-12T01:51:25.218Z",
+      "lastPushDirHash": "534ndkqlEnKydwG5jjUCxySCGl8="
+    }
+  }
+}

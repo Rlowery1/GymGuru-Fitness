@@ -1,0 +1,14 @@
+{
+  "resourceName": "guruphotos",
+  "policyUUID": "4fba0926",
+  "bucketName": "guruphotos",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

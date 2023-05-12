@@ -1,0 +1,67 @@
+type User
+  @model
+  @auth(rules: [{allow: owner}, {allow: private, operations: [read]}])
+{
+  id: ID! @primaryKey
+  profile: UserProfile @hasOne(fields: ["profileId"])
+  profileId: ID!
+  lastUpdated: String
+  exerciseLogs: [ExerciseLog] @hasMany(indexName: "exerciseLogsByUser", fields: ["id"])
+}
+
+type UserProfile
+  @model
+  @auth(rules: [{ allow: owner, operations: [create, update, delete, read] }])
+{
+  id: ID! @primaryKey
+  name: String
+  age: Int
+  weight: Float
+  height: Float
+  gender: String
+  fitnessGoal: String
+  workoutDays: Int
+  updatedAt: String
+  avatar: String # Added for avatar support
+  user: User @belongsTo(fields: ["id"])
+}
+
+type ExerciseLog
+  @model
+  @auth(rules: [{allow: owner}, {allow: private, operations: [read]}])
+{
+  id: ID! @primaryKey
+  exerciseName: String!
+  date: String!
+  reps: [Int]
+  weights: [Float]
+  user: User @belongsTo(fields: ["userId"])
+  userId: ID!
+  @index(name: "exerciseLogsByUser", sortKeyFields: ["date"])
+}
+
+input ExerciseLogInput {
+  id: ID
+  exerciseName: String!
+  date: String!
+  reps: [Int]
+  weights: [Float]
+  userId: ID!
+}
+
+input UpdateUserProfileInput {
+  id: ID
+  name: String
+  age: Int
+  weight: Float
+  height: Float
+  gender: String
+  fitnessGoal: String
+  workoutDays: Int
+  updatedAt: String
+  avatar: String # Added for avatar support
+}
+
+type Query {
+  getLatestExerciseLog(exerciseName: String!, userId: ID!): ExerciseLog
+}
