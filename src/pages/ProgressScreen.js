@@ -81,7 +81,6 @@ const WorkoutStreak = ({ exerciseLogs }) => {
         <View style={{ flex: 1, alignItems: 'center' }}>
           {/* Add a View with height as padding */}
           <View style={{ height: 30  }} />
-          {/* Add the CircularProgress component here */}
           <CircularProgress
             progress={(streak % 30 === 0 ? 1 : streak % 30 / 30) * 100}
             hotStreak={hotStreak}
@@ -137,7 +136,7 @@ const ExerciseTypeDistribution = () => {
             height={220}
             chartConfig={{
               ...progressStyles.pieChartConfig,
-              backgroundColor: '#22223B', // Update the background color
+              backgroundColor: '#22223B', 
               labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
               propsForLabels: {
                 fontFamily: 'System',
@@ -243,7 +242,7 @@ const WeeklyGoalProgress = ({ exerciseLogs }) => {
         <Title style={[progressStyles.cardTitle, {color: 'white'}]}>Weekly Goal Progress</Title>
         <ProgressBar
           progress={progress / 100}
-          color={"#f44336"} // Use a hard-coded color value for red500
+          color={"#f44336"} 
           style={progressStyles.progressBar}
         />
         <Text style={[progressStyles.progressBarText, {color: 'white'}]}>
@@ -313,7 +312,7 @@ const TotalRepsSetsProgress = ({ exerciseLogs }) => {
 
 
 const HeartRateProgress = () => {
-  const dummyProgress = 60; // You can change this value to any number between 0 and 100
+  const dummyProgress = 60; 
 
   return (
   <Card style={progressStyles.card}>
@@ -389,7 +388,7 @@ const ProgressScreen = () => {
           },
           headers: {
             'content-type': 'application/octet-stream',
-            'X-RapidAPI-Key': 'ad388b1d98mshf2c7750256ea7d2p1e67fcjsn4d1a44336865',
+            'X-RapidAPI-Key': 'YOUR_RAPID_API_KEY',
             'X-RapidAPI-Host': 'quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com',
           },
         };
@@ -467,13 +466,13 @@ const progressStyles = StyleSheet.create({
   },
   quoteContainer: {
     paddingHorizontal: 20,
-    paddingTop: 100, // Increase paddingTop to avoid cutting off the text
+    paddingTop: 100, 
     paddingBottom: 10,
-    flexDirection: 'row', // Add flexDirection to align the quote icon and text
-    alignItems: 'center', // Align items vertically
+    flexDirection: 'row', 
+    alignItems: 'center', 
   },
   quoteIcon: {
-    marginRight: 8, // Add marginRight to separate the quote icon and text
+    marginRight: 8, 
   },
   quoteText: {
     color: '#FFFFFF',
@@ -484,7 +483,7 @@ const progressStyles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 16,
     textAlign: 'right',
-    flex: 1, // Ensure the author text takes up the remaining space
+    flex: 1, 
   },
   pieChartConfig: {
     backgroundColor: '#22223B',
