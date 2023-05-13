@@ -6,7 +6,7 @@ const axiosInstance = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com',
-    'X-RapidAPI-Key': 'ad388b1d98mshf2c7750256ea7d2p1e67fcjsn4d1a44336865',
+    'X-RapidAPI-Key': 'YOUR_RAPID_API_KEY',
   },
 });
 
