@@ -41,7 +41,7 @@ const WorkoutDay = ({ route }) => {
   const { week, day, days: daysPerWeek, workoutSessionId } = route.params;
   const [exercises, setExercises] = useState([]);
   const [loading, setLoading] = useState(true);
-  const rapidApiKey = 'ad388b1d98mshf2c7750256ea7d2p1e67fcjsn4d1a44336865';
+  const rapidApiKey = 'YOUR_RAPID_API_KEY';
   const [userProfile, setUserProfile] = useState(null);
 
 
