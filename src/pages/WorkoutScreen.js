@@ -42,7 +42,7 @@ const WorkoutScreen = ({ onDaysChange }) => {
   const fadeAnim = useState(new Animated.Value(0))[0];
   const headerTextRef = React.useRef(null);
   const [animatedValue] = useState(new Animated.Value(0));
-  const YOUTUBE_API_KEY = "AIzaSyCrpCL8JdtQaUXYnmA9wNQezOrN4YZwle4";
+  const YOUTUBE_API_KEY = "YOUR_YOUTUBE_API_KEY";
   const rotation = useState(new Animated.Value(0))[0];
   const [buttonOpacity] = useState(new Animated.Value(0));
   const isFocused = useIsFocused();
@@ -127,7 +127,6 @@ useEffect(() => {
 
     const fadeButtonIn = () => {
   buttonFadeAnimations.forEach((animation, index) => {
-    // Reset the initial value of the button's opacity to 0
     animation.setValue(0);
 
     Animated.timing(animation, {
@@ -164,7 +163,7 @@ useEffect(() => {
 
   useEffect(() => {
   if (isFocused) {
-    fadeIn(3000); // Add a 3-second delay for every render when the screen is focused
+    fadeIn(3000); 
   }
 }, [isFocused]);
 
@@ -188,7 +187,7 @@ useEffect(() => {
       body: 'Time for your daily workout!',
     },
     trigger: {
-      seconds: 60 * 60 * 24, // Schedule a notification 24 hours from now
+      seconds: 60 * 60 * 24, 
       repeats: true,
     },
   });
@@ -215,9 +214,9 @@ useFocusEffect(
 
     fetchWorkoutSettings();
 
-    fadeIn(); // Move this line here to run the animation every time the screen is focused
+    fadeIn(); 
 
-    // Reset rotation value and start the rotation animation
+    
     rotation.setValue(0);
     startRotation();
     fadeButtonIn();
@@ -308,18 +307,17 @@ useFocusEffect(
 
 
     const generateWorkoutTip = () => {
-  // Fade out both the colored box and the text simultaneously
   Animated.parallel([
     Animated.timing(fadeAnim, {
       toValue: 0,
       duration: 500,
-      easing: Easing.out(Easing.cubic), // Add easing function
+      easing: Easing.out(Easing.cubic), 
       useNativeDriver: true,
     }),
     Animated.timing(fadeAnimText, {
       toValue: 0,
       duration: 500,
-      easing: Easing.out(Easing.cubic), // Add easing function
+      easing: Easing.out(Easing.cubic), 
       useNativeDriver: true,
     }),
   ]).start(() => {
@@ -343,18 +341,18 @@ useFocusEffect(
         useNativeDriver: true,
       }).start();
 
-      // Fade in both the colored box and the text simultaneously
+     
       Animated.parallel([
       Animated.timing(fadeAnim, {
         toValue: 1,
         duration: 500,
-        easing: Easing.out(Easing.cubic), // Add easing function
+        easing: Easing.out(Easing.cubic), 
         useNativeDriver: true,
       }),
       Animated.timing(fadeAnimText, {
         toValue: 1,
         duration: 500,
-        easing: Easing.out(Easing.cubic), // Add easing function
+        easing: Easing.out(Easing.cubic), 
         useNativeDriver: true,
       }),
     ]).start();
@@ -370,8 +368,8 @@ useFocusEffect(
   useEffect(() => {
   const interval = setInterval(() => {
     generateWorkoutTip();
-    fadeIn(); // Fade in the new tip
-  }, 10000); // Change quotes every 10 seconds
+    fadeIn(); 
+  }, 10000); 
 
   return () => clearInterval(interval);
 }, [quoteIndex]);
@@ -419,7 +417,7 @@ useFocusEffect(
                   style={[
                     styles.dayButton,
                     {
-                      opacity: buttonFadeAnimations[i], // Use the corresponding button fade animation
+                      opacity: buttonFadeAnimations[i], 
                     },
                   ]}
                 >
@@ -434,7 +432,7 @@ useFocusEffect(
             style={[
               styles.workoutTipContainer,
               {
-                opacity: fadeAnim, // Use fadeAnim for the blue box's opacity
+                opacity: fadeAnim, 
               },
             ]}
           >
@@ -442,7 +440,7 @@ useFocusEffect(
               style={[
                 styles.workoutTipText,
                 {
-                  opacity: fadeAnimText, // Use fadeAnimText for the text's opacity
+                  opacity: fadeAnimText, 
                 },
               ]}
             >
