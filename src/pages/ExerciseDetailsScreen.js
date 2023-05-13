@@ -7,7 +7,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import ExerciseCardWrapper from '../components/ExerciseCard';
 
 
-const API_KEY = 'ad388b1d98mshf2c7750256ea7d2p1e67fcjsn4d1a44336865';
+const API_KEY = 'YOUR_YOUTUBE_API_KEY';
 
 const ExerciseDetailsScreen = ({ route, navigation }) => {
   const { id, workoutSessionId } = route.params;
@@ -66,10 +66,10 @@ const ExerciseDetailsScreen = ({ route, navigation }) => {
     <View style={styles.container}>
       <Text style={styles.title}>{exercise.name}</Text>
       <ExerciseCardWrapper
-        exercise={{ ...exercise, videoId }} // Pass videoId along with exercise
+        exercise={{ ...exercise, videoId }}
         onStopLogging={onStopLogging}
         workoutSessionId={workoutSessionId}
-        navigation={navigation} // Pass navigation prop here
+        navigation={navigation} 
       />
     </View>
   );
