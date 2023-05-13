@@ -62,7 +62,7 @@ const LoadingScreen = ({ isLoading, children }) => {
 };
 
 
-const API_KEY = 'AIzaSyCrpCL8JdtQaUXYnmA9wNQezOrN4YZwle4';
+const API_KEY = 'YOUR_YOUTUBE_API_KEY';
 
 const HomeScreen = ({ navigation }) => {
   const [userData, setUserData] = useState(null);
@@ -72,7 +72,7 @@ const HomeScreen = ({ navigation }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredExercises, setFilteredExercises] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const YOUTUBE_API_KEY = 'AIzaSyCrpCL8JdtQaUXYnmA9wNQezOrN4YZwle4';
+  const YOUTUBE_API_KEY = 'YOUR_YOUTUBE_API_KEY';
   const [searchText, setSearchText] = useState('');
   const [logoAnimation] = useState(new Animated.Value(0));
 
@@ -278,7 +278,7 @@ const HomeScreen = ({ navigation }) => {
             <TextInput
               style={styles.searchBar}
               placeholder="Search for exercises or workouts"
-              placeholderTextColor="#1A1A1A" // Add this line to change the color of the placeholder text
+              placeholderTextColor="#1A1A1A" 
               onChangeText={text => setSearchText(text)}
               value={searchText}
               returnKeyType="search"
@@ -460,8 +460,8 @@ useEffect(() => {
       tabBarActiveTintColor: '#0E7C7B',
       tabBarInactiveTintColor: '#E6E6E6',
       tabBarStyle: { backgroundColor: '#1A1A1D' },
-      tabBarShowLabel: true, // Show labels for all screens
-      headerShown: false // Hide header for all screens
+      tabBarShowLabel: true, 
+      headerShown: false 
     })}
   >
     <Tab.Screen
@@ -514,7 +514,7 @@ useEffect(() => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1A1A1D', // Change the background color
+    backgroundColor: '#1A1A1D', 
   },
   logoContainer: {
     alignItems: 'center',
@@ -523,8 +523,8 @@ const styles = StyleSheet.create({
     paddingTop: 40,
   },
   logo: {
-    width: Dimensions.get('window').width * 0.7, // Increase logo size
-    height: Dimensions.get('window').height * 0.37, // Increase logo size
+    width: Dimensions.get('window').width * 0.7, 
+    height: Dimensions.get('window').height * 0.37, 
     marginBottom: 20, // Add space below the logo
   },
   searchBarContainer: {
@@ -676,7 +676,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#1A1A1D', // Change the background color
+    backgroundColor: '#1A1A1D', 
   },
   dailyNutritionCard: {
     backgroundColor: '#0E7C7B',
