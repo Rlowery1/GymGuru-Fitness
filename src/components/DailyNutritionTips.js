@@ -55,7 +55,7 @@ const DailyNutritionTips = ({ navigation }) => {
         url: 'https://edamam-recipe-search.p.rapidapi.com/search',
         params: { q: 'chicken' },
         headers: {
-          'X-RapidAPI-Key': 'ad388b1d98mshf2c7750256ea7d2p1e67fcjsn4d1a44336865',
+          'X-RapidAPI-Key': 'YOUR_RAPID_API_KEY',
           'X-RapidAPI-Host': 'edamam-recipe-search.p.rapidapi.com',
         },
       };
@@ -79,7 +79,7 @@ const DailyNutritionTips = ({ navigation }) => {
       url: 'https://edamam-recipe-search.p.rapidapi.com/search',
       params: { q: 'chicken' },
       headers: {
-        'X-RapidAPI-Key': 'ad388b1d98mshf2c7750256ea7d2p1e67fcjsn4d1a44336865',
+        'X-RapidAPI-Key': 'YOUR_RAPID_API_KEY',
         'X-RapidAPI-Host': 'edamam-recipe-search.p.rapidapi.com',
       },
     };
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
   screen: {
     backgroundColor: '#1A1A1D',
     flex: 1,
-    paddingTop: 50, // Add this line to increase the top padding
+    paddingTop: 50, 
   },
   container: {
     borderRadius: 10,
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 15,
     textAlign: 'center',
-    paddingTop: 10, // Add this line to increase the top padding for the title
+    paddingTop: 10, 
   },
   recipeItem: {
     flexDirection: 'row',
